@@ -5,6 +5,7 @@ import { MenuOutlined } from "@ant-design/icons";
 export const HeaderSection = styled("header")`
   padding: 1rem 0.5rem;
   background: rgb(241, 242, 243);
+  height: 100px;
   .ant-row-space-between {
     align-items: center;
     text-align: center;
@@ -19,8 +20,8 @@ export const Large = styled(Link)`
   font-size: 1.2rem;
   color: #18216d;
   transition: color 0.2s ease-in;
-  margin: 0.5rem 2rem;
-
+  margin: 0.5rem 1rem;
+  padding: 0 0.2rem;
   @media only screen and (max-width: 768px) {
     margin: 1.25rem 2rem;
   }
@@ -45,7 +46,7 @@ export const CustomNavLink = styled("div")`
 `;
 
 export const Burger = styled("div")`
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 1280px) {
     display: block;
   }
 
@@ -57,7 +58,7 @@ export const Burger = styled("div")`
 `;
 
 export const NotHidden = styled("div")`
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 1280px) {
     display: none;
   }
 `;

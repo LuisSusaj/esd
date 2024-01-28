@@ -10,9 +10,34 @@ const routes = [
     component: "About",
   },
   {
-    path: ["/gallery"],
+    path: ["/our-work"],
     exact: true,
-    component: "Gallery",
+    component: "WhatWeDo",
+  },
+  {
+    path: ["/camp"],
+    exact: true,
+    component: "Camp",
+  },
+  {
+    path: ["/shop"],
+    exact: true,
+    component: "Shop",
+  },
+  {
+    path: ["/faq"],
+    exact: true,
+    component: "Faq",
+  },
+  {
+    path: ["/contact"],
+    exact: true,
+    component: "Contact",
+  },
+  {
+    path: ["/donations"],
+    exact: true,
+    component: "Donations",
   },
 ];
 

@@ -7,12 +7,9 @@ import fetchData from "../../common/utils/fetchData";
 import formatVideoData from "../../common/utils/formatVideoData";
 import VideoSkeleton from "../../common/VideoSkeleton";
 import { Fade } from "react-awesome-reveal";
-import {
-  StyledRow,
-  ContentWrapper,
-} from "../../components/ContentBlock/styles";
+import { StyledRow } from "../ContentBlock/styles";
 
-const VideoBlock = () => {
+const GalleyBlock = () => {
   const { url, token, file, videos }: Instagram = network.instagram;
   const tokenUrl = `${url}${token}${file}`;
   const { response, error } = useFetch({
@@ -23,7 +20,7 @@ const VideoBlock = () => {
   const [videoError, setVideoError] = useState(null);
   const [videoLoading, setVideoLoading] = useState(true);
   const [formatedData, setFormatedData] = useState<any>([]);
-  const maxVideoShowcase = 24;
+  const maxVideoShowcase = 16;
   useEffect(() => {
     accessToken &&
       fetchData({
@@ -47,13 +44,15 @@ const VideoBlock = () => {
     });
     setFormatedData(formatedData);
   }, [videoResponse]);
-
   return (
     <>
       <Fade direction={"left"} triggerOnce>
         <StyledRow justify="center" align="middle" direction={"left"}>
-          <h6 style={{marginTop:30}}>Gallery and Testimonials</h6>
-          <p>Browse through a collection of empowering images showcasing participants, events, and the positive atmosphere of our program.</p>
+          <h6 style={{ marginTop: 30 }}>Gallery</h6>
+          <p>
+            Browse through a collection of empowering images showcasing
+            participants, events, and the positive atmosphere of our program.
+          </p>
         </StyledRow>
       </Fade>
       <Fade direction={"up"} triggerOnce>
@@ -72,4 +71,4 @@ const VideoBlock = () => {
     </>
   );
 };
-export default VideoBlock;
+export default GalleyBlock;

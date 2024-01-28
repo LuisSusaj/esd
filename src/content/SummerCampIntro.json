@@ -1,0 +1,13 @@
+{
+  "title": "Book your spot",
+  "text": "Dive into empowerment this summer with our sizzling self-defense training program! Join us for an unforgettable journey of skill-building, confidence boosting, and creating lifelong bonds, ensuring you step into the sunshine with a renewed sense of strength and safety.",
+  "button": [
+    {
+      "title": "Join Our Camp"
+    },
+    {
+      "title": "Learn more",
+      "color": "#fff"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { Row, Col } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
+import { Image } from "../../common/Image";
 import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
 
@@ -56,7 +57,7 @@ const Footer = ({ t }: { t: TFunction }) => {
               <Para>
                 {t(`Do you have any question? Feel free to reach out.`)}
               </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
+              <a href="mailto:esdalbania1@gmail.com">
                 <Chat>{t(`Let's Chat`)}</Chat>
               </a>
             </Col>
@@ -70,12 +71,11 @@ const Footer = ({ t }: { t: TFunction }) => {
               <Para>Shqiper</Para>
             </Col>
             <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
+              <Title>ESD Albania</Title>
               <Large to="/">{t("Home")}</Large>
-              <Large to="/">{t("About")}</Large>
-              <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
+              <Large to="/about">{t("About")}</Large>
+              <Large to="/mission">{t("Mission")}</Large>
+              <Large to="/camp">{t("Camp")}</Large>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
               <Label htmlFor="select-lang">{t("Language")}</Label>
@@ -110,7 +110,7 @@ const Footer = ({ t }: { t: TFunction }) => {
           >
             <NavLink to="/">
               <LogoContainer>
-                <SvgIcon
+                <Image
                   src="logo.png"
                   aria-label="homepage"
                   width="170px"

@@ -1,10 +1,12 @@
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
 import { SvgIcon } from "../../common/SvgIcon";
+import { Image } from "../../common/Image";
 import {
   ContentSection,
   Content,
@@ -15,6 +17,8 @@ import {
   StyledRow,
   ButtonWrapper,
 } from "./styles";
+import handleClick from "../../common/utils/handleClick";
+import SlidingImages from "../SlidingImages";
 
 const ContentBlock = ({
   icon,
@@ -25,13 +29,18 @@ const ContentBlock = ({
   t,
   id,
   direction,
+  message,
+  founder,
+  slide,
 }: ContentBlockProps) => {
+  const isNotSvg = !icon.includes("svg");
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
       behavior: "smooth",
     });
   };
+  const history = useHistory();
 
   return (
     <ContentSection>
@@ -43,13 +52,28 @@ const ContentBlock = ({
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
-            <SvgIcon src={icon} width="100%" height="100%"/>
+            {slide ? (
+              <SlidingImages />
+            ) : isNotSvg ? (
+              <Image src={icon} width="100%" height="100%" />
+            ) : (
+              <SvgIcon src={icon} width="100%" height="100%" />
+            )}
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>
-              {direction === "right" && id !== "no-right"? (
+              {message && (
+                <>
+                  <Content>{message}</Content>
+                  <Content>{founder}</Content>
+                  <Button onClick={() => handleClick(history, "/camp")}>
+                    Join us!
+                  </Button>
+                </>
+              )}
+              {direction === "right" && id !== "no-right" ? (
                 <ButtonWrapper>
                   {typeof button === "object" &&
                     button.map(
@@ -64,7 +88,13 @@ const ContentBlock = ({
                           <Button
                             key={id}
                             color={item.color}
-                            onClick={() => scrollTo("about")}
+                            onClick={() =>
+                              scrollTo(
+                                item.title === "An Invitation"
+                                  ? "product"
+                                  : "about"
+                              )
+                            }
                           >
                             {t(item.title)}
                           </Button>
@@ -85,13 +115,18 @@ const ContentBlock = ({
                           },
                           id: number
                         ) => {
+                          const isNotSvg = !item.icon.includes(".svg");
                           return (
                             <Col key={id} span={11}>
-                              <SvgIcon
-                                src={item.icon}
-                                width=""
-                                height="60px"
-                              />
+                              {isNotSvg ? (
+                                <Image src={item.icon} width="" height="60px" />
+                              ) : (
+                                <SvgIcon
+                                  src={item.icon}
+                                  width=""
+                                  height="60px"
+                                />
+                              )}
                               <MinTitle>{t(item.title)}</MinTitle>
                               <MinPara>{t(item.content)}</MinPara>
                             </Col>

@@ -1,0 +1,26 @@
+{
+  "title": "Our Schedule",
+  "text": "Unlock your potential with Our Schedule, your roadmap to self-defense success – join us on a journey of empowerment, where every session is a step towards a safer, stronger you!",
+  "section": [
+    {
+      "title": "2nd December",
+      "content": "With the embassy of the Kindom Of Netherlands",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "5th of December",
+      "content": "ESD @Naim Frasheri School, Durres",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "7th of December",
+      "content": "ESD @Eqerem Cabej School, Tirane",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "14th of December",
+      "content": "ESD @Hiqmet Buzi School, Fier",
+      "icon": "notes.svg"
+    }
+  ]
+}

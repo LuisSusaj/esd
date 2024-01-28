@@ -1,0 +1,36 @@
+{
+  "title": "Why Us?",
+  "text": "Choose us for your empowerment journey because our organization is committed to providing top-notch programs, combining expert instruction with a supportive community atmosphere.",
+  "section": [
+    {
+      "title": "Increase Self Awerness",
+      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
+      "icon": "Suedi-logo.png"
+    },
+    {
+      "title": "Develop convincing communication",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "Ministria_e_Shëndetësisë_dhe_Mbrojtjes_Sociale.png"
+    },
+    {
+      "title": "Avoid uncomfortable situations",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "keshilli_i_ministrave.jpeg"
+    },
+    {
+      "title": "Community Support",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "UN_WOMEN_Logo.png"
+    },
+    {
+      "title": "Avoid uncomfortable situations",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "keshilli_i_ministrave.jpeg"
+    },
+    {
+      "title": "Community Support",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "UN_WOMEN_Logo.png"
+    }
+  ]
+}

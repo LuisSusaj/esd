@@ -3,7 +3,7 @@ import { Row, Col, Drawer } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+
 import {
   HeaderSection,
   LogoContainer,
@@ -14,49 +14,46 @@ import {
   Outline,
   Span,
   Large,
-  CustomNavLinkSmall
 } from "./styles";
 
 const Header = ({ t }: { t: TFunction }) => {
-  const [visible, setVisibility] = useState(false);
+  const [visibility, setVisibility] = useState(false);
 
   const toggleButton = () => {
-    setVisibility(!visible);
+    setVisibility(!visibility);
+  };
+
+  const handleMenuItemClick = () => {
+    setVisibility(false);
   };
 
   const MenuItem = () => {
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-      setVisibility(false);
-    };
     return (
       <>
-        <Large to="/">
+        <Large to="/" onClick={handleMenuItemClick}>
           <Span>{t("Home")}</Span>
         </Large>
-        <Large to="/about">
-          <Span>{t("About")}</Span>
+        <Large to="/about" onClick={handleMenuItemClick}>
+          <Span>{t("Who we are")}</Span>
         </Large>
-        <Large to="/camp">
-          <Span>{t("Camp")}</Span>
+        <Large to="/our-work" onClick={handleMenuItemClick}>
+          <Span>{t("What we do")}</Span>
         </Large>
-        <Large to="/mission">
-          <Span>{t("Mission")}</Span>
+        <Large to="/faq" onClick={handleMenuItemClick}>
+          <Span>{t("Faq")}</Span>
         </Large>
-        <Large to="/gallery">
-          <Span>{t("Gallery")}</Span>
+        <Large to="/camp" onClick={handleMenuItemClick}>
+          <Span>{t("Workshop & Events")}</Span>
         </Large>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
-          <Span>
-            <Button>{t("Contact")}</Button>
-          </Span>
-        </CustomNavLinkSmall>
+        <Large to="/shop" onClick={handleMenuItemClick}>
+          <Span>{t("Shop")}</Span>
+        </Large>
+        <Large to="/contact" onClick={handleMenuItemClick}>
+          <Span>{t("Contact")}</Span>
+        </Large>
+        <Large to="/donations" onClick={handleMenuItemClick}>
+          <Span>{t("Donations")}</Span>
+        </Large>
       </>
     );
   };
@@ -64,7 +61,7 @@ const Header = ({ t }: { t: TFunction }) => {
   return (
     <HeaderSection>
       <Container>
-        <Row justify="space-between">
+        <Row justify="space-between" style={{ height: "calc(100px - 2rem)" }}>
           <LogoContainer to="/" aria-label="homepage">
             <SvgIcon src="logo.png" width="170px" height="auto" />
           </LogoContainer>
@@ -75,7 +72,7 @@ const Header = ({ t }: { t: TFunction }) => {
             <Outline />
           </Burger>
         </Row>
-        <Drawer closable={false} open={visible} onClose={toggleButton}>
+        <Drawer closable={false} open={visibility} onClose={toggleButton}>
           <Col style={{ marginBottom: "2.5rem" }}>
             <Label onClick={toggleButton}>
               <Col span={12}>
