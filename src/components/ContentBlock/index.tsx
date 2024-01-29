@@ -32,6 +32,7 @@ const ContentBlock = ({
   message,
   founder,
   slide,
+  quote,
 }: ContentBlockProps) => {
   const isNotSvg = !icon.includes("svg");
   const scrollTo = (id: string) => {
@@ -62,14 +63,15 @@ const ContentBlock = ({
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <h6>{t(title)}</h6>
+              <h6>{t(title ?? "")}</h6>
               <Content>{t(content)}</Content>
+              {quote && <Content>{t(quote)}</Content>}
               {message && (
                 <>
                   <Content>{message}</Content>
                   <Content>{founder}</Content>
                   <Button onClick={() => handleClick(history, "/camp")}>
-                    Join us!
+                    Book Now!
                   </Button>
                 </>
               )}
@@ -92,7 +94,7 @@ const ContentBlock = ({
                               scrollTo(
                                 item.title === "An Invitation"
                                   ? "product"
-                                  : "about"
+                                  : "whereWeTaught"
                               )
                             }
                           >

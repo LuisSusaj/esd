@@ -12,7 +12,7 @@ const ContentBlock = () => {
           const isEven = i % 2 === 0;
           const direction = isEven ? "right" : "left";
           return (
-            <ContentSection>
+            <ContentSection key={ele.desc}>
               <Fade direction={direction} triggerOnce>
                 <StyledRow
                   justify="space-between"

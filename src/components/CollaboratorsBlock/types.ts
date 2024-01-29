@@ -18,7 +18,7 @@ export interface CollaboratorsBlockProps {
   )[];
   t: TFunction;
   id: string;
-  direction: "left" | "right";
+  direction: "bottom-left" | "bottom-right" | "down" | "left" | "right" | "top-left" | "top-right" | "up";
   founder?: string;
   message?: string;
 }

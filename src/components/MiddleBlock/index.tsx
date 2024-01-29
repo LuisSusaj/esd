@@ -8,8 +8,9 @@ import handleClick from "../../common/utils/handleClick";
 
 interface MiddleBlockProps {
   title: string;
-  content: string;
-  button: string;
+  content?: string;
+  paragraphs?: string[];
+  button?: string;
   t: TFunction;
   route: string;
   video?: boolean;
@@ -19,12 +20,12 @@ const MiddleBlock = ({
   title,
   content,
   button,
+  paragraphs,
   t,
   route,
   video,
 }: MiddleBlockProps) => {
   const history = useHistory();
-
   return (
     <MiddleBlockSection>
       <Slide direction="up" triggerOnce>
@@ -45,15 +46,19 @@ const MiddleBlock = ({
                   }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>
+              ) : paragraphs ? (
+                paragraphs.map((ele, i) => {
+                  return <Content key={i}>{t(ele ?? "")}</Content>;
+                })
               ) : (
-                <Content>{t(content)}</Content>
+                <Content>{t(content ?? "")}</Content>
               )}
               {button && (
                 <Button
                   name="submit"
                   onClick={() => handleClick(history, route)}
                 >
-                  {t(button)}
+                  {button && t(button)}
                 </Button>
               )}
             </Col>

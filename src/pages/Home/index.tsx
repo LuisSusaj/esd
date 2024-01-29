@@ -1,11 +1,10 @@
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
-import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 import WhereTaughtContent from "../../content/WhereWeTaught.json";
+import WorkshopAndEvents from "../../content/WorkshopAndEvents.json";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
@@ -34,33 +33,24 @@ const Home = () => {
         route="/about"
         video={true}
       />
+      <MiddleBlock
+        title={WorkshopAndEvents.title}
+        paragraphs={WorkshopAndEvents.paragraphs}
+        route="/camp"
+      />
       <WhereWeTaught
         title={WhereTaughtContent.title}
-        content={WhereTaughtContent.text}
+        left={WhereTaughtContent.left}
+        right={WhereTaughtContent.right}
         route="/about"
       />
-      {/* <ContentBlock
-        direction="left"
-        title={AboutContent.title}
-        content={AboutContent.text}
-        section={AboutContent.section}
-        icon="why-us.jpg"
-        id="about"
-      />
-      <ContentBlock
-        direction="right"
-        title={MissionContent.title}
-        content={MissionContent.text}
-        icon="us.jpg"
-        id="mission"
-      /> */}
       <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
         message={ProductContent.message}
         founder={ProductContent.founder}
-        icon="founder.jpeg"
+        icon="book.jpg"
         id="product"
       />
       <Contact

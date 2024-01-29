@@ -1,7 +1,7 @@
 import { TFunction } from "react-i18next";
 export interface ContentBlockProps {
   icon: string;
-  title: string;
+  title?: string;
   content: string;
   section?: {
     title: string;
@@ -24,4 +24,5 @@ export interface ContentBlockProps {
   founder?: string;
   message?: string;
   slide?: boolean;
+  quote?: string;
 }

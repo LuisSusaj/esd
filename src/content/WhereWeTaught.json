@@ -1,7 +1,63 @@
 {
   "title": "Where we taught",
   "text": "1. Ministry of Education, Sport and Youth in Albania 2. British Embassy in Tirana3. Embassy of the Kingdom of the Netherlands in Tirana, 4. UN Women in Albania 5. ESD Global Self Defens ",
-  "section": ["1. Ministry of Education, Sport and Youth in Albania."],
-  "section1": [],
+  "left": [
+    { "text": "Ministry of Education" },
+    { "text": "Sport and Youth in Albania" },
+    { "text": "British Embassy in Tirana" },
+    {
+      "text": "Embassy of the Kingdom of the Netherlands in Tirana"
+    },
+    { "text": "UN Women in Albania", "src": "https://www.powerofxyz.com" },
+    {
+      "text": "ESD Global Self Defense",
+      "src": "https://www.esdglobalselfdefense.org"
+    },
+    {
+      "text": "IMPACT Personal Safety SoCal",
+      "src": "https://www.impactpersonalsafety.com"
+    },
+    {
+      "text": "IMPACT Personal Safety Global",
+      "src": "https://www.impactglobal.net"
+    },
+    {
+      "text": "VPEC",
+      "src": "https://www.violencepreventioneducation.com"
+    },
+    { "text": "Power XYZ", "src": "https://www.powerofxyz.com" },
+    { "text": "MyPwr", "src": "https://mypwr.co.il" },
+    {
+      "text": "Association of ESD Professionals",
+      "src": "https://www.esdprofessionals.org"
+    },
+    {
+      "text": "RIA Red de Instructoras de Autodefensa",
+      "src": "https://www.ria-lac.org"
+    }
+  ],
+  "right": [
+    { "text": "Municipality of Tirana" },
+    { "text": "Agjensia e Rinise, Tirane" },
+    { "text": "University 'Luigj Gurakuqi', Shkoder" },
+    {
+      "text": "University 'Aleksander Xhuvani” University, Elbasan"
+    },
+    { "text": "University 'Fan S. Noli' University, Korca" },
+    {
+      "text": "University 'Agricultural University of Tirana', Kamez"
+    },
+    { "text": "World Academy of Tirana" },
+    { "text": "Tirana International SchoolDifferent and Equal" },
+    {
+      "text": "ElHaLev non-profit ",
+      "src": "https://www.eng.elhalev.org/"
+    },
+    { "text": "AWEN", "src": "https://awenetwork.org/" },
+    { "text": "Shoqata “Forumi Gruas Elbasan" },
+    { "text": "Fodada International" },
+    { "text": "Africa Development Group (ADG)" },
+    { "text": "USAID's Planning and Local Government Project (PLGP)" }
+  ],
   "button": "Get started"
 }
